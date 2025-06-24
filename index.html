@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotion-Based Music Player</title>
+
+  <!-- ✅ TensorFlow + Teachable Machine -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+  <!-- ✅ Google Fonts + CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>🎧 Emotion-Based Music Player</h1>
+
+  <div class="controls">
+    <button onclick="startCamera()">📷 Start Camera</button>
+    <input type="file" id="imageUpload" accept="image/*" />
+    <button onclick="predictEmotion()">🎯 Detect Emotion</button>
+  </div>
+
+  <div class="container">
+    <video id="webcam" autoplay muted playsinline></video>
+    <img id="uploadedImage" />
+    <div class="result-box">
+      <div id="emoji">😐</div>
+      <div id="result">Emotion: Not detected</div>
+      <audio id="player" controls autoplay></audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
